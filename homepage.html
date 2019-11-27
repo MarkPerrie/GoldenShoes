@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Golden Shoe</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
+		<style type="text/css">
+			p
+			{
+				font-family: "Trebuchet MS", Helvetica, sans-serif;
+			}	
+
+			a
+			{
+				font-family: "Trebuchet MS", Helvetica, sans-serif;
+			}		
+
+			#displayImage
+			{
+				width: 95%;
+				height: 95%;
+				outline-color:#d9d9d9;
+				outline: solid;
+			}
+
+			.secondaryImage
+			{
+				width: 120px; 
+				height: 68.2px;	
+				outline-color:#d9d9d9;
+				outline: solid;
+			}
+
+			#title
+			{
+				text-decoration: underline;
+				font-size: 30px;
+			}
+
+			#price
+			{
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row justify-content-center" id="header" style="margin-bottom: 0px">
+				<div class="col-md-3">
+					<img src="fakelogo.png" alt="Placeholder logo for Golden Shoe">
+				</div>
+				<div class="col-md-6">
+					<nav class="nav justify-content-center">
+						<a class="nav-link" href="#">Home</a>
+						<a class="nav-link" href="#">Products</a>
+						<a class="nav-link" href="#">My Account</a>
+						<a class="nav-link" href="#">About</a>
+						<a class="nav-link" href="#">Contact</a>
+					</nav>			
+				</div>
+				<div class="col-md-3">
+					<img src="shoppingcart.png" alt="Shopping cart icon" width="10%" height="10%">
+					<p>Your Shopping Cart</p>
+					<p>Shoes : 0  Cost: 0 </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="row">
+						<div class="col-md-12">
+							<p>Search By</p>
+							<form action="">
+								<div class="form-group">
+									<label for="keywords">Keywords: </label>
+									<input type="text" class="form-control" id="keywords">
+								</div>
+								<div class="form-group">
+									<label for="category">Categorys</label>
+									<select class="form-control" id="category">
+										<option> -- Select Category --</option>
+										<option>Men's Sports</option>
+										<option>Men's Evening Wear</option>
+										<option>Mens's Casual</option>
+										<option>Men's Slippers</option>
+										<option>Men's Sandles</option>
+										<option>Woman's Sports</option>
+										<option>Woman's Evening Wear</option>
+										<option>Woman's Casual</option>
+										<option>Woman's Slippers</option>
+										<option>Woman's Sandles</option>
+										<option>Woman's Highheels</option>
+										<option>Womans's Pumps</option>
+										<option>All</option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn-primary">Search</button>
+							</form>							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p>Categories</p>
+							<ul>
+								<li>Men's Sports</li>
+								<li>Men's Evening Wear</li>
+								<li>Men's Casual</li>
+								<li>Men's Slippers</li>
+								<li>Men's Sandles</li>
+								<li>Woman's Sports</li>
+								<li>Woman's Evening Wear</li>
+								<li>Woman's Casual</li>
+								<li>Woman's Slippers</li>
+								<li>Woman's Sandles</li>
+								<li>Woman's Highheels</li>
+								<li>Woman's Pumps</li>
+								<li>All</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-6">
+							<img id="displayImage" src="DisplayShoe/1.png" alt="Primary shoe display image" width="95%" height="95%">
+						</div>
+						<div class="col-md-3">
+							<p id="title">Tan Tempest Mid Trainers</p>
+							<p id="price"> Price: <b>£29.95</b></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-9 ">
+								
+								<img class="secondaryImage" id="secondaryImage1" src="DisplayShoe/1.png" 
+								onmouseenter="onMouseOver(1)" onmouseout="onMouseOut(1)" 
+								alt="1st secondary shoe display image">
+								
+								<img class="secondaryImage" id="secondaryImage2" src="DisplayShoe/2.png" 
+								onmouseenter="onMouseOver(2)" onmouseout="onMouseOut(2)" 
+								alt="2nd secondary shoe display image">		
+								
+								<img class="secondaryImage" id="secondaryImage3" src="DisplayShoe/3.png" 
+								onmouseenter="onMouseOver(3)" onmouseout="onMouseOut(3)" 
+								alt="3rd secondary shoe display image">
+								
+								<img class="secondaryImage" id="secondaryImage4" src="DisplayShoe/4.png" 
+								onmouseenter="onMouseOver(4)" onmouseout="onMouseOut(4)" 
+								alt="4th secondary shoe display image">
+						</div>
+					</div>
+				</div>
+			<!-- After we will do a bottom row of text for shipping, contact, gift wrapping and shopping cart
+				Then the bottom navbar for the links at the top again and social media links -->
+		</div>
+		<script type="text/javascript">
+			//var = currentImage;
+			function onMouseOver(imageCode)
+			{
+				document.getElementById("secondaryImage" + imageCode).style.outline = "solid";
+				document.getElementById("displayImage").style.outline = "solid";						
+				document.getElementById("displayImage").src = "DisplayShoe/" + imageCode + ".png";
+			}
+
+			function onMouseOut(imageCode)
+			{
+				document.getElementById("secondaryImage" + imageCode).style.outline = "none";					
+				document.getElementById("displayImage").style.outline = "none";					
+				document.getElementById("displayImage").src = "DisplayShoe/1.png";
+			}
+		</script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
